@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Public Sans' rel='stylesheet'>
     <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <title>Mixland</title>
 </head>
 
@@ -254,78 +255,123 @@
     </section>
 
     <!-- BLOG -->
-    <section>
-        <h2>Read our blog to learn about time management</h2>
-        <p>Time management is the process of planning and exercising conscious control of time spent on specific
-            activities.</p>
-        <div>
-            <article>
-                <time>November 20, 2021</time>
-                <h3>15+ Most Effective and Proven Time Management Techniques</h3>
+    <section class="blog-section">
+        <div class="blog-header">
+            <h2>Read our blog to learn about time management</h2>
+            <p>Time management is the process of planning and exercising conscious control of time spent on specific
+                activities</p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-card">
+                <div class="blog-image-placeholder"></div>
+                <div class="blog-content">
+                    <span class="blog-date">November 25, 2022</span>
+                    <h3>15+ Most Effective and Proven Time Management Techniques</h3>
+                </div>
             </article>
-            <article>
-                <time>November 18, 2021</time>
-                <h3>Time tracking reports – why do you need time management?</h3>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card">
+                <div class="blog-image-placeholder"></div>
+                <div class="blog-content">
+                    <span class="blog-date">November 16, 2022</span>
+                    <h3>Time tracking reports – why do you need time management?</h3>
+                </div>
             </article>
         </div>
     </section>
 
     <!-- CTA -->
-    <section>
+    <section class="cta-section">
+        <!-- decorative arcs -->
+        <svg class="arcs" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="60" cy="170" r="70" stroke="white" stroke-width="1.2" opacity="0.5" />
+            <circle cx="60" cy="170" r="110" stroke="white" stroke-width="1.2" opacity="0.5" />
+            <circle cx="60" cy="170" r="150" stroke="white" stroke-width="1.2" opacity="0.5" />
+            <circle cx="60" cy="170" r="195" stroke="white" stroke-width="1.2" opacity="0.5" />
+            <circle cx="60" cy="170" r="240" stroke="white" stroke-width="1.2" opacity="0.5" />
+        </svg>
+
         <h2>Join our community</h2>
-        <p>Work smarter with this time management and our tool, join our newsletter for a better experience.</p>
-        <form>
+        <p class="sub">
+            Work smarter with this time management and not hard,<br />
+            join our newsletter for a better experience
+        </p>
+
+        <div class="email-row">
             <input type="email" placeholder="Enter your email address" />
-            <button type="submit">Get started now</button>
-        </form>
-        <p>No spam. No trails. No commitments.</p>
+            <button>Get started now</button>
+        </div>
+
+        <p class="fine-print">No ads. No trails. No commitments</p>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <div>
-            <h4>Mixland</h4>
-            <p><!-- footer description text --></p>
-            <a href="#">Start Live Chat</a>
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-brand">
+                <h2>Mixland</h2>
+
+                <p>
+                    Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
+                    Velit officia consequat duis enim velit mollit.
+                </p>
+
+                <button class="chat-btn">
+                    💬 Start Live Chat
+                </button>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <a href="#">About</a>
+                    <a href="#">Features</a>
+                    <a href="#">Works</a>
+                    <a href="#">Career</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <a href="#">Customer Support</a>
+                    <a href="#">Delivery Details</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <a href="#">Free eBooks</a>
+                    <a href="#">Development Tutorial</a>
+                    <a href="#">How to - Blog</a>
+                    <a href="#">Youtube Playlist</a>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Extra Links</h3>
+                    <a href="#">Customer Support</a>
+                    <a href="#">Delivery Details</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
         </div>
-        <div>
-            <h5>Company</h5>
-            <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">Works</a></li>
-                <li><a href="#">Career</a></li>
-            </ul>
+
+        <div class="footer-bottom">
+            <p>© Copyright 2021, All Rights Reserved by Postcraft</p>
+
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
         </div>
-        <div>
-            <h5>Help</h5>
-            <ul>
-                <li><a href="#">Customer Support</a></li>
-                <li><a href="#">Delivery Details</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
-        <div>
-            <h5>Resources</h5>
-            <ul>
-                <li><a href="#">Free eBooks</a></li>
-                <li><a href="#">Development Tutorial</a></li>
-                <li><a href="#">How to - Blog</a></a></li>
-                <li><a href="#">Youtube Playlist</a></li>
-            </ul>
-        </div>
-        <div>
-            <h5>Extra Links</h5>
-            <ul>
-                <li><a href="#">Customer Support</a></li>
-                <li><a href="#">Delivery Details</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-            </ul>
-        </div>
-        <p>© Copyright 2021. All Rights Reserved by PixelCraft</p>
     </footer>
+
 </body>
 
 </html>

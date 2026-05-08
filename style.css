@@ -1,6 +1,5 @@
 :root {
     --circle-size: 500px;
-    /* ← change one value, everything scales */
 }
 
 * {
@@ -57,7 +56,6 @@ nav>a:first-child {
     color: #2563eb;
 }
 
-/* Login link styling */
 .login {
     text-decoration: none;
     color: #1a1a1a;
@@ -66,7 +64,6 @@ nav>a:first-child {
     font-size: 0.95rem;
 }
 
-/* The Blue Button */
 .btn-cta {
     background-color: #2d5cf7;
     color: white;
@@ -163,7 +160,6 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* Email Form Styling */
 .email-form {
     display: flex;
     background: #fff;
@@ -217,7 +213,6 @@ h1 {
     align-items: center;
 }
 
-/* Small checkmark icon effect */
 .features li::before {
     content: '✓';
     color: #2d5cf7;
@@ -467,9 +462,7 @@ h1 {
 
 .image-side {
     display: grid;
-    /* Column 1 is wider, Column 2 is narrower (makes right cards smaller) */
     grid-template-columns: 1.4fr 1fr;
-    /* row 1 is a small 'buffer', rows 2 and 3 hold the cards */
     grid-template-rows: 40px auto auto;
     gap: 20px;
     align-items: start;
@@ -477,20 +470,15 @@ h1 {
 
 .main-task-card {
     grid-column: 1;
-    /* Start at row 1 and span 3 rows so it's taller than the others */
-    grid-row: 1 / span 3;
+    grid-row: 2 / span 3;
     z-index: 2;
-    /* Center it vertically so it hangs 'between' the right cards */
-    align-self: center;
 }
 
 .progress-card {
     grid-column: 2;
     grid-row: 1 / span 2;
-    /* Starts at the very top buffer */
     width: 85%;
     justify-self: center;
-    /* Aligns it to the right */
 }
 
 .stats-card {
@@ -498,7 +486,7 @@ h1 {
     grid-row: 3;
     width: 90%;
     justify-self: center;
-    /* Instead of margin-top: 110%, use a small offset if needed */
+    align-self: end;
     margin-top: -10px;
 }
 
@@ -535,7 +523,6 @@ h1 {
     text-align: center;
 }
 
-/* Typography */
 .title-main {
     font-family: 'Public Sans', sans-serif;
     font-size: 2.5rem;
@@ -647,8 +634,294 @@ h1 {
     letter-spacing: 0.03em;
 }
 
+.blog-section {
+    padding: 100px 8%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
 
-/* Responsive: stack them on mobile */
+.blog-header {
+    margin-bottom: 60px;
+}
+
+.blog-header h2 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111827;
+    margin-bottom: 20px;
+}
+
+.blog-header p {
+    font-family: 'Inter', sans-serif;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    text-align: left;
+}
+
+.blog-card {
+    cursor: pointer;
+}
+
+.blog-image-placeholder {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background-color: #d1d5db;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image-placeholder {
+    transform: translateY(-5px);
+}
+
+.blog-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: #6b7280;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.blog-content h3 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.4;
+}
+
+.cta-section {
+    background: #F9C03E;
+    border-radius: 200% 60% 0 0 / 80px 80px 0 0;
+    padding: 80px 20px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.arcs {
+    position: absolute;
+    top: -20px;
+    left: -40px;
+    width: 340px;
+    height: 340px;
+    pointer-events: none;
+}
+
+.cta-section h2 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.cta-section p.sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.email-row {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    max-width: 500px;
+    margin: 0 auto 14px;
+    padding: 7px 7px 7px 22px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+    position: relative;
+}
+
+.email-row input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: #333;
+    background: transparent;
+    min-width: 0;
+}
+
+.email-row input::placeholder {
+    color: #aaa;
+}
+
+.email-row button {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 24px;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.email-row button:hover {
+    background: #2d2d2d;
+}
+
+.fine-print {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #555;
+    position: relative;
+}
+
+
+footer {
+    background: #f3f3f3;
+    padding: 80px 100px 30px;
+    color: #111;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.footer-brand {
+    max-width: 320px;
+}
+
+.footer-brand h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-family: 'Public Sans';
+}
+
+.footer-brand p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    font-size: 17px;
+    font-family: 'Inter';
+}
+
+.chat-btn {
+    background: #2f64ff;
+    color: white;
+    border: none;
+    padding: 18px 28px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chat-btn:hover {
+    background: #1f4de0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 90px;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.footer-column h3 {
+    font-family: 'Public Sans';
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.footer-column a {
+    font-family: 'Inter';
+    text-decoration: none;
+    color: #222;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.footer-column a:hover,
+.footer-column .active {
+    color: #2f64ff;
+}
+
+.footer-bottom {
+    margin-top: 70px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #666;
+    font-size: 16px;
+}
+
+.socials {
+    display: flex;
+    gap: 14px;
+}
+
+.socials a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #111;
+    font-size: 18px;
+    transition: 0.3s;
+    border: 1px solid #ddd;
+}
+
+.socials a:hover {
+    background: #2f64ff;
+    color: white;
+    border-color: #2f64ff;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-header h2 {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .image-side {
         grid-template-columns: 1fr;
@@ -802,6 +1075,24 @@ h1 {
         padding: 40px 30px;
         gap: 30px;
     }
+
+    footer {
+        padding: 60px 30px 30px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 50px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -835,7 +1126,6 @@ h1 {
         gap: 32px;
     }
 
-    /* Divider between stacked cards */
     .testimonial-item+.testimonial-item {
         border-top: 1px solid #e2e8f0;
         padding-top: 32px;
@@ -849,5 +1139,30 @@ h1 {
         justify-content: center;
         padding: 16px 20px;
         gap: 20px;
+    }
+
+    .cta-section {
+        border-radius: 40px 40px 0 0;
+        padding: 60px 16px 50px;
+    }
+
+    .cta-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .email-row {
+        flex-direction: column;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .email-row input {
+        width: 100%;
+        text-align: center;
+    }
+
+    .email-row button {
+        width: 100%;
+        padding: 13px;
     }
 }
