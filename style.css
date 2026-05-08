@@ -424,13 +424,13 @@ h1 {
     margin: 0 auto;
 }
 
-/* --- Content Side --- */
 .content-side {
     flex: 1;
     max-width: 500px;
 }
 
 .content-side h2 {
+    font-family: 'Public Sans';
     font-size: 3rem;
     font-weight: 800;
     color: #111827;
@@ -439,7 +439,8 @@ h1 {
 }
 
 .content-side .highlight {
-    font-size: 1.25rem;
+    font-family: sans-serif;
+    font-size: 1rem;
     font-weight: 600;
     color: #374151;
     margin-bottom: 20px;
@@ -447,59 +448,79 @@ h1 {
 }
 
 .content-side .sub-text {
+    font-family: sans-serif;
     font-size: 1.1rem;
     color: #6b7280;
     line-height: 1.7;
 }
 
-/* --- Image Side (The Layered Cards) --- */
 .image-side {
-    flex: 1;
-    position: relative;
-    height: 500px; /* Container height to hold absolute children */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    /* Column 1 is wider, Column 2 is narrower (makes right cards smaller) */
+    grid-template-columns: 1.4fr 1fr;
+    /* row 1 is a small 'buffer', rows 2 and 3 hold the cards */
+    grid-template-rows: 40px auto auto;
+    gap: 20px;
+    align-items: start;
 }
 
-.card {
-    position: absolute;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08); /* Deep soft shadow */
-    transition: transform 0.4s ease;
-}
-
-.card img {
-    width: 100%;
-    display: block;
-    border-radius: 15px;
-}
-
-/* Positioning based on the image layout */
 .main-task-card {
-    width: 380px;
-    left: 0;
-    z-index: 3;
+    grid-column: 1;
+    /* Start at row 1 and span 3 rows so it's taller than the others */
+    grid-row: 1 / span 3;
+    z-index: 2;
+    /* Center it vertically so it hangs 'between' the right cards */
+    align-self: center;
 }
 
 .progress-card {
-    width: 240px;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    transform: translateY(-20px); /* Slightly raised */
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    /* Starts at the very top buffer */
+    width: 85%;
+    justify-self: center;
+    /* Aligns it to the right */
 }
 
 .stats-card {
-    width: 260px;
-    bottom: 0;
-    right: -20px;
-    z-index: 4; /* Sits on top of the task card */
+    grid-column: 2;
+    grid-row: 3;
+    width: 90%;
+    justify-self: center;
+    /* Instead of margin-top: 110%, use a small offset if needed */
+    margin-top: -10px;
+}
+
+.card2 {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.card2 img {
+    width: 100%;
+    display: block;
+}
+
+/* Responsive: stack them on mobile */
+@media screen and (max-width: 768px) {
+    .image-side {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .main-task-card,
+    .progress-card,
+    .stats-card {
+        grid-column: 1;
+        grid-row: auto;
+        transform: none;
+    }
 }
 
 .image-side:hover .card {
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
 @media screen and (max-width: 992px) {
@@ -603,6 +624,28 @@ h1 {
 
     .busy h2 {
         text-align: center;
+    }
+
+    .split-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-side {
+        max-width: 100%;
+    }
+
+    .image-side {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .main-task-card,
+    .progress-card,
+    .stats-card {
+        grid-column: 1;
+        grid-row: auto;
+        transform: none;
     }
 }
 
