@@ -10,7 +10,7 @@ gsap.from(".excellent", {
     scrollTrigger: {
         trigger: ".excellent",
         start: "top 80%",
-        markers: true,
+        // markers: true,
     }
 });
 
