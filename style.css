@@ -1,4 +1,3 @@
-/* Reset basic styles for the navbar */
 nav {
     position: fixed;
     top: 0;
@@ -74,14 +73,12 @@ nav>a:first-child {
     align-items: center;
 }
 
-/* Hide toggle by default */
 .nav-toggle {
     display: none;
 }
 
 .nav-toggle-label {
     display: none;
-    /* Only show on mobile */
     cursor: pointer;
     padding: 10px;
 }
@@ -111,44 +108,39 @@ nav>a:first-child {
     top: 7px;
 }
 
-/* --- RESPONSIVE BREAKPOINT --- */
 @media screen and (max-width: 992px) {
+    .login{
+        margin: 20px;
+    }
     .nav-toggle-label {
         display: block;
-        /* Show hamburger icon */
+        margin-left: auto;
     }
 
     .link-cont,
     .nav-buttons {
         position: absolute;
         top: 80px;
-        /* Height of the nav */
         left: 0;
         width: 100%;
         background: white;
         flex-direction: column;
         align-items: center;
-        gap: 20px;
         padding: 20px 0;
         border-bottom: 1px solid #eee;
-
-        /* Hide by default on mobile */
         display: none;
     }
 
     .nav-buttons {
         top: 320px;
-        /* Adjust based on list height */
         padding-top: 0;
     }
 
-    /* Show menu when checkbox is checked */
     .nav-toggle:checked~.link-cont,
     .nav-toggle:checked~.nav-buttons {
         display: flex;
     }
 
-    /* Simple Hamburger Animation */
     .nav-toggle:checked+.nav-toggle-label span {
         background: transparent;
     }
