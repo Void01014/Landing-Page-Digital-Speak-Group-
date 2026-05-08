@@ -224,7 +224,6 @@ h1 {
 .bg-circle {
     position: absolute;
     inset: 0;
-    /* fills hero-image exactly */
     background-image: url('imgs/bg.svg');
     background-size: cover;
     border-radius: 100%;
@@ -351,11 +350,13 @@ h1 {
 }
 
 .busy {
+    position: relative;
     display: flex;
     align-items: center;
     flex-direction: row;
     gap: 8rem;
     padding-inline: calc(20vw - 6rem);
+    overflow-x: hidden;
 }
 
 .busy h2 {
@@ -366,7 +367,7 @@ h1 {
 .busy h2+p {
     line-height: 1.7rem;
     font-family: 'Inter', sans-serif;
-    font-size:medium;
+    font-size: medium;
     padding-right: 10px;
 }
 
@@ -376,6 +377,130 @@ h1 {
     color: gray;
 }
 
+.bg-circle2 {
+    position: absolute;
+    inset: 0;
+    background-image: url('imgs/bg.svg');
+    background-size: cover;
+    border-radius: 100% 100% 0 100%;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.todo-list {
+    position: absolute;
+    width: 70%;
+    left: 47%;
+    top: 53%;
+    z-index: 3;
+    transform: rotate(0deg) translate(-50%, -50%);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(128, 128, 128, 0.221);
+}
+
+.card.reports {
+    width: 43%;
+    right: -4%;
+    top: 22%;
+    z-index: 3;
+    transform: rotate(0deg);
+}
+
+.card.timesheets {
+    width: 43%;
+    right: -15%;
+    top: 40%;
+    z-index: 3;
+    transform: rotate(0deg);
+}
+
+.split-feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 8%;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- Content Side --- */
+.content-side {
+    flex: 1;
+    max-width: 500px;
+}
+
+.content-side h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111827;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.content-side .highlight {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.content-side .sub-text {
+    font-size: 1.1rem;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+/* --- Image Side (The Layered Cards) --- */
+.image-side {
+    flex: 1;
+    position: relative;
+    height: 500px; /* Container height to hold absolute children */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: absolute;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08); /* Deep soft shadow */
+    transition: transform 0.4s ease;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+}
+
+/* Positioning based on the image layout */
+.main-task-card {
+    width: 380px;
+    left: 0;
+    z-index: 3;
+}
+
+.progress-card {
+    width: 240px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    transform: translateY(-20px); /* Slightly raised */
+}
+
+.stats-card {
+    width: 260px;
+    bottom: 0;
+    right: -20px;
+    z-index: 4; /* Sits on top of the task card */
+}
+
+.image-side:hover .card {
+    transform: scale(1.02);
+}
 
 @media screen and (max-width: 992px) {
     .login {
@@ -471,8 +596,13 @@ h1 {
         width: 90%;
     }
 
-    .busy{
-        flex-direction: column;
+    .busy {
+        gap: 2rem;
+        flex-direction: column-reverse;
+    }
+
+    .busy h2 {
+        text-align: center;
     }
 }
 
