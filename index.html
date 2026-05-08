@@ -4,22 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Mixland</title>
 </head>
 
 <body>
     <!-- NAV -->
     <nav>
-        <a href="#">Mixland</a>
-        <ul>
+        <a href="#" class="logo">Mixland</a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle">
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+        </label>
+
+        <ul class="link-cont">
             <li><a href="#">Demo</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Pages</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
-        <a href="#">Login</a>
-        <a href="#">Get Started Free</a>
+
+        <div class="nav-buttons">
+            <a href="#" class="login">Login</a>
+            <a href="#" class="btn-cta">Get Started Free</a>
+        </div>
     </nav>
 
     <!-- HERO -->

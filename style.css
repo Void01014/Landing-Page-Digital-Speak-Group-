@@ -1,0 +1,165 @@
+/* Reset basic styles for the navbar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    padding: 0 5%;
+    background-color: white;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    z-index: 1000;
+}
+
+nav>a:first-child {
+    font-weight: 800;
+    font-size: 1.2rem;
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.link-cont {
+    display: flex;
+    justify-content: start;
+    list-style: none;
+    gap: 30px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.link-cont li a {
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.link-cont li a:hover {
+    color: #2563eb;
+}
+
+/* Login link styling */
+.login {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 600;
+    margin-right: 25px;
+    font-size: 0.95rem;
+}
+
+/* The Blue Button */
+.btn-cta {
+    background-color: #2d5cf7;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.btn-cta:hover {
+    background-color: #1a46d6;
+    scale: 105%;
+    transition: 0.2s;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Hide toggle by default */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: none;
+    /* Only show on mobile */
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: #333;
+    height: 2px;
+    width: 25px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+/* --- RESPONSIVE BREAKPOINT --- */
+@media screen and (max-width: 992px) {
+    .nav-toggle-label {
+        display: block;
+        /* Show hamburger icon */
+    }
+
+    .link-cont,
+    .nav-buttons {
+        position: absolute;
+        top: 80px;
+        /* Height of the nav */
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+
+        /* Hide by default on mobile */
+        display: none;
+    }
+
+    .nav-buttons {
+        top: 320px;
+        /* Adjust based on list height */
+        padding-top: 0;
+    }
+
+    /* Show menu when checkbox is checked */
+    .nav-toggle:checked~.link-cont,
+    .nav-toggle:checked~.nav-buttons {
+        display: flex;
+    }
+
+    /* Simple Hamburger Animation */
+    .nav-toggle:checked+.nav-toggle-label span {
+        background: transparent;
+    }
+
+    .nav-toggle:checked+.nav-toggle-label span::before {
+        transform: rotate(45deg);
+        bottom: 0;
+    }
+
+    .nav-toggle:checked+.nav-toggle-label span::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+}
