@@ -1173,6 +1173,7 @@ footer {
 
     .title-main {
         font-size: 1.6rem;
+        margin-top: var(--spacing-3xl);
         margin-bottom: 32px;
     }
 
