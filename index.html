@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Public Sans' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <title>Mixland</title>
 </head>
@@ -35,6 +37,7 @@
         </div>
     </nav>
 
+    <main>
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
@@ -44,7 +47,8 @@
                 management allows you to achieve great results.</p>
 
             <form class="email-form">
-                <input type="email" placeholder="Enter your email here" />
+                <label for="hero-email" class="sr-only">Email address</label>
+                <input type="email" id="hero-email" placeholder="Enter your email here" required />
                 <button type="submit">Sign Up</button>
             </form>
 
@@ -59,7 +63,7 @@
             </div>
 
             <img src="imgs/Sub Task2.svg" class="card tasks" alt="Scheduled Tasks">
-            <img src="imgs/Chart - Light.png" class="card chart" alt="Time Chart">
+            <img src="imgs/Chart - Light.svg" class="card chart" alt="Time Chart">
             <img src="imgs/Time Duration - Light.svg" class="card duration" alt="Time Duration">
             <img src="imgs/Task Completed - Light.svg" class="card completed" alt="Task Completed">
         </div>
@@ -70,7 +74,7 @@
         <h2>Simple interface through which tasks can be easily managed</h2>
 
         <div class="cards-cont">
-            <div class="func-card">
+            <article class="func-card">
                 <div class="ui-preview">
                     <img src="imgs/top-clients.svg" alt="Top Clients UI">
                 </div>
@@ -78,9 +82,9 @@
                     <h3>Track Customers</h3>
                     <p>Customer activity can be easily tracked with one click</p>
                 </div>
-            </div>
+            </article>
 
-            <div class="func-card">
+            <article class="func-card">
                 <div class="ui-preview">
                     <img src="imgs/feedbacks.svg" alt="Feedbacks UI">
                 </div>
@@ -88,9 +92,9 @@
                     <h3>Get Feedbacks</h3>
                     <p>Customers can leave their own comments and feedback</p>
                 </div>
-            </div>
+            </article>
 
-            <div class="func-card">
+            <article class="func-card">
                 <div class="ui-preview">
                     <img src="imgs/results.svg" alt="Results UI">
                 </div>
@@ -98,7 +102,7 @@
                     <h3>See Results</h3>
                     <p>The results show how much work has been done</p>
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
@@ -153,31 +157,37 @@
 
             <div class="testimonial-box">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-item">
+                <blockquote class="testimonial-item">
                     <div class="avatar"></div>
                     <p class="quote">"The easiest and most accurate way to track time across teams and finish the
-                        projects. Timely’s automatic."</p>
-                    <h4 class="author-name">Jerome Bell</h4>
-                    <p class="author-title">CTO, Waverio</p>
-                </div>
+                        projects. Timely's automatic."</p>
+                    <footer>
+                        <h4 class="author-name">Jerome Bell</h4>
+                        <p class="author-title">CTO, Waverio</p>
+                    </footer>
+                </blockquote>
 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-item">
+                <blockquote class="testimonial-item">
                     <div class="avatar"></div>
                     <p class="quote">"It is a time tracking solution that helps employees track hours across multiple
                         tasks and projects that software."</p>
-                    <h4 class="author-name">Leslie Alexander</h4>
-                    <p class="author-title">President of Marketing, SS</p>
-                </div>
+                    <footer>
+                        <h4 class="author-name">Leslie Alexander</h4>
+                        <p class="author-title">President of Marketing, SS</p>
+                    </footer>
+                </blockquote>
 
                 <!-- Testimonial 3 -->
-                <div class="testimonial-item">
+                <blockquote class="testimonial-item">
                     <div class="avatar"></div>
                     <p class="quote">"A simple and affordable solution for capturing employee time to run payroll,
                         invoice clients and manage productivity."</p>
-                    <h4 class="author-name">Wade Warren</h4>
-                    <p class="author-title">Founder, Creaty</p>
-                </div>
+                    <footer>
+                        <h4 class="author-name">Wade Warren</h4>
+                        <p class="author-title">Founder, Creaty</p>
+                    </footer>
+                </blockquote>
             </div>
 
             <p class="trusted-text">Trusted by world class business owners</p>
@@ -267,7 +277,7 @@
             <article class="blog-card">
                 <div class="blog-image-placeholder"></div>
                 <div class="blog-content">
-                    <span class="blog-date">November 25, 2022</span>
+                    <time datetime="2022-11-25" class="blog-date">November 25, 2022</time>
                     <h3>15+ Most Effective and Proven Time Management Techniques</h3>
                 </div>
             </article>
@@ -276,7 +286,7 @@
             <article class="blog-card">
                 <div class="blog-image-placeholder"></div>
                 <div class="blog-content">
-                    <span class="blog-date">November 16, 2022</span>
+                    <time datetime="2022-11-16" class="blog-date">November 16, 2022</time>
                     <h3>Time tracking reports – why do you need time management?</h3>
                 </div>
             </article>
@@ -301,12 +311,14 @@
         </p>
 
         <div class="email-row">
-            <input type="email" placeholder="Enter your email address" />
-            <button>Get started now</button>
+            <label for="cta-email" class="sr-only">Email address</label>
+            <input type="email" id="cta-email" placeholder="Enter your email address" required />
+            <button type="button">Get started now</button>
         </div>
 
         <p class="fine-print">No ads. No trails. No commitments</p>
     </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer">
